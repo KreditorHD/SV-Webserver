@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Projekt Woche!</title>
+  </head>
+  <body>
+    <h2>Projekt Woche Login</h2>
+
+    <form method="post" action="">
+      {% csrf_token %}
+      Username:<br>
+      <input type="text" name="Username" value="{{ username }}">
+      <br>
+      Passwort:<br>
+      <input type="password" name="Passwort" value="{{ password }}">
+      <br><br>
+    <input type="submit" value="Login">
+  </form>
+  <p class="Status">{{ status }}</p>
+  </body>
+</html>
