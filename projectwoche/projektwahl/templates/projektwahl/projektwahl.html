@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wahl!</title>
+  </head>
+  <body>
+    <form action="" Type="post" id="person">
+      <label class="h2" form="person">Wahlformular</label>
+      <br>
+      <br>
+      <label for="vorname">Schüler:</label>
+      <input type="text" name="name">
+      <br>
+      <br>
+      <label for="project">Projekt:</label>
+      <select name="project">
+        {% for p in project %}
+        <option value={{p.name}}>{{p.name}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <br>
+      <p>{{status}}</p>
+      <button type="submit">Eingaben absenden</button>
+  </form>
+  </body>
+</html>
