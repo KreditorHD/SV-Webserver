@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>Wahl!</title>
   </head>
+  {% if user.is_authenticated %}
   <body>
-    <form action="" Type="post" id="person">
+    <form action="" method="post" id="person">
+      {% csrf_token %}
       <label class="h2" form="person">Wahlformular</label>
       <br>
       <br>
@@ -23,6 +25,11 @@
       <br>
       <p>{{status}}</p>
       <button type="submit">Eingaben absenden</button>
+      <a href="{% url 'logout' %}">logout</a>
+      {% else %}
+        <p>Sie sind nicht eingeloggt</p>
+        <a href="{% url 'login' %}">login</a>
+      {% endif %}
   </form>
   </body>
 </html>

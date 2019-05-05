@@ -3,7 +3,7 @@ from django.db import models
 class Projekt(models.Model):
     lehrer = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-    grösse = models.IntegerField();
+    groesse = models.IntegerField();
     mitglieder = models.IntegerField(default=0);
 
     def __str__(self):
