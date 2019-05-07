@@ -21,7 +21,7 @@ from projektwahl import views as wahlviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('wahl/', wahlviews.Wahl,name='wahl'),
     path('', include('django.contrib.auth.urls')),
     path('', RedirectView.as_view(url='login/')),
-    path('wahl/', wahlviews.Wahl),
 ]

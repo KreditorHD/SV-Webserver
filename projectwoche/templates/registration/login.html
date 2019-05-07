@@ -1,6 +1,14 @@
 <h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+{% if user.is_authenticated %}
+  <p>Sie sind bereits eingeloggt</p>
+  <br>
+    <a href="{% url 'wahl' %}">zur Wahl</a>
+  <br>
+  <a href="{% url 'logout' %}">logout</a>
+{% else %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+{% endif %}

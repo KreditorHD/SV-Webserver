@@ -12,13 +12,17 @@
       <br>
       <br>
       <label for="vorname">Schüler:</label>
-      <input type="text" name="name">
+      <select name="student">
+        {% for p in schueler %}
+        <option value='{{p.name}}'>{{p.name}}</option>
+        {% endfor %}
+      </select>
       <br>
       <br>
       <label for="project">Projekt:</label>
       <select name="project">
         {% for p in project %}
-        <option value={{p.name}}>{{p.name}}</option>
+        <option value='{{p.name}}'>{{p.name}}</option>
         {% endfor %}
       </select>
       <br>
