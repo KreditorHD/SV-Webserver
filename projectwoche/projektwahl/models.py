@@ -11,7 +11,9 @@ class Projekt(models.Model):
 
 class Schueler(models.Model):
     name = models.CharField(max_length=100)
-    projekt = models.ForeignKey(Projekt,on_delete=models.CASCADE,null=True,blank=True)
+    erstWahl = models.ForeignKey(Projekt,on_delete=models.CASCADE,null=True,blank=True,related_name='erstWahl')
+    zweitWahl = models.ForeignKey(Projekt,on_delete=models.CASCADE,null=True,blank=True,related_name='zweitWahl')
+    drittWahl = models.ForeignKey(Projekt,on_delete=models.CASCADE,null=True,blank=True,related_name='drittWahl')
     klasse = models.CharField(max_length=3)
     def __str__(self):
         return self.name

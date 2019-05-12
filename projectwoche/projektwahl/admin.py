@@ -9,7 +9,7 @@ admin.site.register(Projekt)
 class SchuelerRegister(resources.ModelResource):
     class Meta:
         model = Schueler
-        fields = ('id','name', 'klasse', 'projekt__name',)
+        fields = ('id','name', 'klasse', 'erstWahl__name','zweitWahl__name','drittWahl__name',)
         #exclude = ('id', )
         import_id_fields = ('id','name', 'klasse',)
 

@@ -13,14 +13,42 @@
       <br>
       <label for="vorname">Schüler:</label>
       <select name="student">
-        {% for p in schueler %}
+        {% if user.username == "lucah" %}
+          {% for p in schueler %}
+            <option value='{{p.name}}'>{{p.name}}</option>
+            {% endfor %}
+          {% else %}
+          {% for p in schueler %}
+            {% if p.klasse == user.username %}
+            <option value='{{p.name}}'>{{p.name}}</option>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+      </select>
+      <br>
+      <br>
+      <label for="1. Wahl">1. Wahl:</label>
+      <select name="1. Wahl">
+        <option value='None'></option>
+        {% for p in project %}
         <option value='{{p.name}}'>{{p.name}}</option>
         {% endfor %}
       </select>
       <br>
       <br>
-      <label for="project">Projekt:</label>
-      <select name="project">
+      <label for="2. Wahl">2. Wahl:</label>
+      <select name="2. Wahl">
+        <option value='None'></option>
+        {% for p in project %}
+        <option value='{{p.name}}'>{{p.name}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <br>
+      <label for="3. Wahl">3. Wahl:</label>
+      <select name="3. Wahl">
+        <option value='None'></option>
         {% for p in project %}
         <option value='{{p.name}}'>{{p.name}}</option>
         {% endfor %}
