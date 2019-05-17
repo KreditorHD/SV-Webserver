@@ -3,7 +3,7 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from .models import Projekt, Schueler
 
-admin.site.register(Projekt)
+#admin.site.register(Projekt)
 #admin.site.register(Schueler)
 
 class SchuelerRegister(resources.ModelResource):
@@ -16,5 +16,20 @@ class SchuelerRegister(resources.ModelResource):
 class SchuelerAdmin(ImportExportModelAdmin):
     resource_class = SchuelerRegister
 
-admin.site.register(Schueler, SchuelerAdmin)
+
 # Register your models here.
+
+
+class ProjektRegister(resources.ModelResource):
+    class Meta:
+        model = Projekt
+        fields = ('id','lehrer', 'name', 'groesse','mitglieder',)
+        #exclude = ('id', )
+        import_id_fields = ('id','lehrer', 'name', 'groesse','mitglieder',)
+
+class ProjektAdmin(ImportExportModelAdmin):
+    resource_class = ProjektRegister
+
+
+admin.site.register(Schueler, SchuelerAdmin)
+admin.site.register(Projekt, ProjektAdmin)
