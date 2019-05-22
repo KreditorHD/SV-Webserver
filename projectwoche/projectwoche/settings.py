@@ -25,7 +25,7 @@ SECRET_KEY = '2(i97j^kjfe#wg!)t4ih%!7%ec!7yz*s_x+2^vu^-v8q#x-@b7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.testdns.p7.de',]
 
 
 # Application definition
